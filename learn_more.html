@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn More | MediEco</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-[Inter] bg-[#f4f8ff] text-slate-900">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="inline-flex items-center">
+      <div class="flex items-center gap-3 font-extrabold text-lg text-blue-700">
+        <span class="w-11 h-11 rounded-full bg-blue-500/10 flex items-center justify-center">
+          <i data-lucide="globe" class="w-6 h-6 text-teal-600"></i>
+        </span>
+        HVMS
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-2 bg-white/70 border border-slate-200 rounded-full px-3 py-2 shadow-sm">
+      <a href="index.html" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="home" class="w-4 h-4"></i>
+        Home
+      </a>
+      <a href="about.html" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+        About
+      </a>
+      <a href="services.html" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="wrench" class="w-4 h-4"></i>
+        Services
+      </a>
+      <a href="contact.html" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="info" class="w-4 h-4"></i>
+        Contact
+      </a>
+      <a href="plan.html" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="info" class="w-4 h-4"></i>
+        Plan
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="w-11 h-11 rounded-full border border-slate-200 bg-white/70 hover:bg-slate-100 transition flex items-center justify-center">
+        <i id="themeIcon" data-lucide="moon" class="w-5 h-5 text-slate-700"></i>
+      </button>
+      <a href="login.html" class="px-6 py-2 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 transition shadow">
+        Log In
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-24">
+  <section class="max-w-6xl mx-auto px-6 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
+      <i data-lucide="shield-check" class="w-4 h-4"></i>
+      Hospital Waste Management System
+    </div>
+    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold">A full-stack platform for safer, smarter biomedical waste handling</h1>
+    <p class="mt-5 text-lg text-slate-600 max-w-3xl mx-auto">
+      MediEco connects hospitals, admins, and collectors in one workflow. From waste report creation to pickup, QR verification, tracking, and certificates — everything is managed in a single secure system.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="signup.html" class="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">Request Pickup</a>
+      <a href="services.html" class="px-6 py-3 rounded-full border border-slate-900 font-semibold hover:bg-slate-100 transition">View Services</a>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 mt-14 grid md:grid-cols-3 gap-6">
+    <div class="service-card">
+      <div class="icon red"><i class="fa-solid fa-hospital"></i></div>
+      <h3>Hospital Dashboard</h3>
+      <p>Submit waste reports, attach photos, track status, download QR labels, and view notifications.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon blue"><i class="fa-solid fa-user-shield"></i></div>
+      <h3>Admin Control</h3>
+      <p>Assign collectors, update statuses, view analytics, export reports, and manage users.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon green"><i class="fa-solid fa-truck"></i></div>
+      <h3>Collector Workflow</h3>
+      <p>View assigned pickups, scan QR codes, update progress, and send location updates.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 mt-16 grid md:grid-cols-2 gap-10 items-start">
+    <div class="service-card">
+      <h3>How it works</h3>
+      <ol class="mt-4 space-y-3 text-slate-600">
+        <li>1. Hospital submits a waste report with category, quantity, urgency, and location.</li>
+        <li>2. Admin reviews requests, assigns a collector, and monitors progress.</li>
+        <li>3. Collector scans QR at pickup, updates status, and logs proof of collection.</li>
+        <li>4. Certificates and compliance records are generated automatically.</li>
+      </ol>
+    </div>
+    <div class="service-card">
+      <h3>Key features</h3>
+      <ul class="mt-4 space-y-3 text-slate-600">
+        <li>• QR-based verification and label printing</li>
+        <li>• Live collector tracking and pickup history</li>
+        <li>• Notifications, alerts, and audit logs</li>
+        <li>• Multi-plan subscriptions and exports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 mt-16 grid md:grid-cols-2 gap-8">
+    <div class="service-card">
+      <h3>Compliance & Safety</h3>
+      <p class="text-slate-600 mt-4">
+        The system enforces proper segregation, tracks high-risk waste, and provides audit logs and certificates to help facilities comply with local biomedical guidelines and WHO standards.
+      </p>
+    </div>
+    <div class="service-card">
+      <h3>Technology Snapshot</h3>
+      <p class="text-slate-600 mt-4">PHP + MySQL backend, QR integrations, Chart.js analytics, GPS updates, and a responsive dashboard UI for every role.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer mt-20">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <span class="footer-logo-icon"><i class="fa-solid fa-check"></i></span>
+        <span>EcoMed Waste</span>
+      </div>
+      <p>Leading the way in responsible biomedical waste management. Protecting healthcare workers, communities, and the environment.</p>
+    </div>
+    <div>
+      <div class="footer-title">Links</div>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Portal Login</a>
+    </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>123 Green Street, Eco City</p>
+      <p>support@ecomed.com</p>
+      <p>+1 (555) 123-4567</p>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">&copy; 2024 EcoMed Waste Management. All rights reserved.</div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeKey = 'medieco_theme';
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeIcon) {
+      themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+    }
+    lucide.createIcons();
+  }
+
+  const storedTheme = localStorage.getItem(themeKey) || 'light';
+  applyTheme(storedTheme);
+
+  themeToggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(themeKey, next);
+    applyTheme(next);
+  });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>

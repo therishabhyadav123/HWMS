@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics & Transport | MediEco</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .detail-shell{max-width:1100px;margin:120px auto 80px;padding:0 6%;}
+    .detail-hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:32px;align-items:center;}
+    .detail-card{background:#fff;border-radius:22px;box-shadow:0 18px 40px rgba(15,23,42,0.12);padding:30px;}
+    .detail-card h1{font-size:36px;color:#0f172a;margin-bottom:10px;}
+    .detail-card p{color:#475569;line-height:1.7;font-size:17px;}
+    .detail-image{border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(15,23,42,0.12);}
+    .detail-image img{width:100%;height:100%;object-fit:cover;min-height:320px;}
+    .detail-grid{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+    .detail-panel{background:#fff;border-radius:18px;padding:22px;box-shadow:0 12px 24px rgba(15,23,42,0.08);}
+    .detail-panel h3{font-size:18px;margin-bottom:8px;color:#0f172a;}
+    .detail-panel p{color:#64748b;line-height:1.6;font-size:15px;}
+    .detail-list{margin-top:26px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;}
+    .detail-list ul{margin-left:18px;color:#475569;line-height:1.8;}
+    .detail-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+    .detail-actions a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none;}
+    .detail-actions .primary{background:#1e6de0;color:#fff;}
+    .detail-actions .secondary{border:1px solid #0f172a;color:#0f172a;}
+    html[data-theme="dark"] .detail-card, html[data-theme="dark"] .detail-panel{background:#111c30;box-shadow:0 18px 40px rgba(2,6,23,0.6);} 
+    html[data-theme="dark"] .detail-card h1, html[data-theme="dark"] .detail-panel h3{color:#e2e8f0;}
+    html[data-theme="dark"] .detail-card p, html[data-theme="dark"] .detail-panel p, html[data-theme="dark"] .detail-list ul{color:#94a3b8;}
+    html[data-theme="dark"] .detail-actions .secondary{border-color:#e2e8f0;color:#e2e8f0;}
+    @media (max-width:900px){
+      .detail-hero{grid-template-columns:1fr;}
+      .detail-grid{grid-template-columns:1fr;}
+      .detail-list{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body class="font-[Inter] bg-[#f4f8ff] text-slate-900">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.php" class="inline-flex items-center">
+      <div class="flex items-center gap-3 font-extrabold text-lg text-blue-700">
+        <span class="w-11 h-11 rounded-full bg-blue-500/10 flex items-center justify-center">
+          <i data-lucide="globe" class="w-6 h-6 text-teal-600"></i>
+        </span>
+        MediEco
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-2 bg-white/70 border border-slate-200 rounded-full px-3 py-2 shadow-sm">
+      <a href="index.php" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="home" class="w-4 h-4"></i>Home
+      </a>
+      <a href="about.php" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="bar-chart-3" class="w-4 h-4"></i>About
+      </a>
+      <a href="services.php" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="wrench" class="w-4 h-4"></i>Services
+      </a>
+      <a href="contact.php" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="info" class="w-4 h-4"></i>Contact
+      </a>
+      <a href="plan.php" class="nav-link flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <i data-lucide="info" class="w-4 h-4"></i>Plan
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="w-11 h-11 rounded-full border border-slate-200 bg-white/70 hover:bg-slate-100 transition flex items-center justify-center">
+        <i id="themeIcon" data-lucide="moon" class="w-5 h-5 text-slate-700"></i>
+      </button>
+      <a href="login.html" class="px-6 py-2 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 transition shadow">Log In</a>
+    </div>
+  </div>
+</header>
+
+<main class="detail-shell">
+  <div class="detail-hero">
+    <div class="detail-card">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-4">
+        <i data-lucide="truck" class="w-4 h-4"></i>
+        Secure transport
+      </div>
+      <h1>Logistics & Transport</h1>
+      <p>Secure collection and transport using dedicated vehicles, spill kits, GPS tracking, and chain-of-custody documentation. Our logistics workflow keeps pickups on schedule and compliant.</p>
+      <div class="detail-actions">
+        <a class="primary" href="signup.html">Request Pickup</a>
+        <a class="secondary" href="services.php">Back to Services</a>
+      </div>
+    </div>
+    <div class="detail-image">
+      <img src="waste.jpg" alt="Logistics and transport">
+    </div>
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-panel">
+      <h3>Collection</h3>
+      <p>Scheduled pickups with verified manifests and sealed containers.</p>
+    </div>
+    <div class="detail-panel">
+      <h3>Tracking</h3>
+      <p>GPS-enabled vehicles and real-time status updates.</p>
+    </div>
+    <div class="detail-panel">
+      <h3>Chain of Custody</h3>
+      <p>Documented handovers and digital proof of service.</p>
+    </div>
+  </div>
+
+  <div class="detail-list">
+    <div class="detail-card">
+      <h3>Handling Requirements</h3>
+      <ul>
+        <li>Pickup confirmation and weight verification.</li>
+        <li>Spill-response supplies on every vehicle.</li>
+        <li>Secure sealing and locking of cargo areas.</li>
+        <li>Route optimization for faster service.</li>
+      </ul>
+    </div>
+    <div class="detail-card">
+      <h3>Compliance Notes</h3>
+      <ul>
+        <li>Maintain transport logs and GPS history.</li>
+        <li>Use licensed transport operators.</li>
+        <li>Keep pickup certificates on record.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <span class="footer-logo-icon"><i class="fa-solid fa-check"></i></span>
+        <span>MediEco</span>
+      </div>
+      <p>Leading the way in responsible biomedical waste management. Protecting healthcare workers, communities, and the environment.</p>
+    </div>
+    <div>
+      <div class="footer-title">Links</div>
+      <a href="about.php">About Us</a>
+      <a href="services.php">Services</a>
+      <a href="contact.php">Contact</a>
+      <a href="login.html">Portal Login</a>
+    </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>123 Green Street, Eco City</p>
+      <p>support@ecomed.com</p>
+      <p>+1 (555) 123-4567</p>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">&copy; 2026 MediEco Waste Management. All rights reserved.</div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeKey = 'medieco_theme';
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeIcon) {
+      themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+    }
+    lucide.createIcons();
+  }
+
+  const storedTheme = localStorage.getItem(themeKey) || 'light';
+  applyTheme(storedTheme);
+
+  themeToggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(themeKey, next);
+    applyTheme(next);
+  });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>
