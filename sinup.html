@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+body{
+    background:#f4f8ff;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    min-height:100vh;
+}
+.container{
+    width:340px;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    padding:25px;
+    animation: fadeInUp 1.5s ease-out;
+    margin: auto;
+}
+h2{text-align:center;margin-bottom:20px;}
+.input-group{position:relative;margin-bottom:15px;}
+.input-group input, .input-group select{
+    width:100%;
+    padding:12px 40px 12px 35px;
+    border:none;
+    border-radius:25px;
+    background:#eef5ff;
+    outline:none;
+    font-size:15px;
+}
+.input-group i.fa-user,
+.input-group i.fa-envelope,
+.input-group i.fa-user-shield{
+    position:absolute;
+    top:50%;
+    left:12px;
+    transform:translateY(-50%);
+    color:#333;
+}
+.input-group .toggle{
+    position:absolute;
+    top:50%;
+    right:12px;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:#333;
+}
+.input-row{display:flex;gap:10px;}
+.half{flex:1;}
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    background:#1e6de0;
+    color:#fff;
+    font-weight:bold;
+}
+.btn:hover{background:#165bb8;}
+.switch{text-align:center;margin-top:10px;}
+.switch a{text-decoration:none;color:#1e6de0;font-weight:bold;}
+.switch a:hover{color:#165bb8;}
+.footer{
+  background:#0b132b;
+  color:#e2e8f0;
+  padding:60px 10% 30px;
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:40px;
+  align-items:start;
+}
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+  font-size:20px;
+  color:#ffffff;
+  margin-bottom:16px;
+}
+.footer-logo-icon{
+  width:38px;
+  height:38px;
+  border-radius:999px;
+  background:#1e6de0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ffffff;
+  font-size:16px;
+}
+.footer-title{
+  color:#ffffff;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.footer a{
+  color:#cbd5f0;
+  text-decoration:none;
+  display:block;
+  margin:10px 0;
+}
+.footer a:hover{
+  color:#ffffff;
+}
+.footer p{
+  color:#cbd5f0;
+  line-height:1.7;
+}
+.footer-divider{
+  height:1px;
+  background:rgba(148,163,184,0.25);
+  margin:30px 0 18px;
+}
+.footer-bottom{
+  text-align:center;
+  color:#94a3b8;
+  font-size:14px;
+}</style>
+</head>
+<body>
+<div class="container">
+    <h2>Create Account</h2>
+    <form action="signup.php" method="POST">
+
+        <!-- Role Selection -->
+        <div class="input-group">
+            <i class="fa fa-user-shield"></i>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" name="fullname" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group half">
+                <input type="password" id="signupPass" name="password" placeholder="Password" required>
+                <i class="fa fa-eye toggle" id="signupEye1"></i>
+            </div>
+            <div class="input-group half">
+                <input type="password" id="signupConfirm" name="confirm_password" placeholder="Confirm Password" required>
+                <i class="fa fa-eye toggle" id="signupEye2"></i>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+
+        <div class="switch">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </form>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <span class="footer-logo-icon"><i class="fa-solid fa-check"></i></span>
+        <span>EcoMed Waste</span>
+      </div>
+      <p>Leading the way in responsible biomedical waste management. Protecting healthcare workers, communities, and the environment.</p>
+    </div>
+    <div>
+      <div class="footer-title">Links</div>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Portal Login</a>
+    </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>123 Green Street, Eco City</p>
+      <p>support@ecomed.com</p>
+      <p>+1 (555) 123-4567</p>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">&copy; 2024 EcoMed Waste Management. All rights reserved.</div>
+</footer>
+
+<script>
+function togglePassword(inputId, eyeId){
+    const input=document.getElementById(inputId);
+    const eye=document.getElementById(eyeId);
+    eye.addEventListener("click", ()=>{
+        if(input.type==="password"){
+            input.type="text";
+            eye.classList.replace("fa-eye","fa-eye-slash");
+        }else{
+            input.type="password";
+            eye.classList.replace("fa-eye-slash","fa-eye");
+        }
+    });
+}
+togglePassword("signupPass","signupEye1");
+togglePassword("signupConfirm","signupEye2");
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

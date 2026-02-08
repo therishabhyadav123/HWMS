@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <!-- Google Identity Script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+
+    <style>
+        *{box-sizing:border-box;}
+        body{
+            margin:0;
+            font-family:"Manrope", "Segoe UI", Arial, sans-serif;
+            background:#f6f8fb;
+            color:#0f172a;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:40px 16px;
+        }
+        .page{
+            width:100%;
+            max-width:980px;
+            text-align:center;
+        }
+        .brand-icon{
+            width:56px;
+            height:56px;
+            border-radius:50%;
+            margin:0 auto 16px;
+            display:grid;
+            place-items:center;
+            background:#e8f1ff;
+            color:#1e6de0;
+            font-size:24px;
+            font-weight:700;
+        }
+        h1{
+            margin:0 0 8px 0;
+            font-size:32px;
+        }
+        .subtitle{
+            color:#64748b;
+            margin:0 0 28px 0;
+        }
+        .card{
+            max-width:520px;
+            margin:0 auto;
+            background:#fff;
+            border-radius:16px;
+            padding:28px;
+            text-align:left;
+            box-shadow:0 18px 40px rgba(15,23,42,0.12);
+            border:1px solid #e2e8f0;
+        }
+        .card h2{
+            margin:0 0 6px 0;
+            font-size:22px;
+        }
+        .card p{
+            margin:0 0 18px 0;
+            color:#64748b;
+        }
+        label{
+            font-weight:600;
+            display:block;
+            margin:12px 0 6px;
+        }
+        input, select{
+            width:100%;
+            padding:12px 14px;
+            border-radius:10px;
+            border:1px solid #dbe3ee;
+            background:#f8fafc;
+            font-size:15px;
+        }
+        button{
+            width:100%;
+            padding:12px;
+            background:#1e6de0;
+            border:none;
+            color:#fff;
+            font-size:16px;
+            border-radius:10px;
+            cursor:pointer;
+            font-weight:700;
+            margin-top:16px;
+        }
+        button:hover{background:#165bb8;}
+        .divider{
+            margin:16px 0;
+            text-align:center;
+            color:#64748b;
+            font-size:14px;
+        }
+        .google-wrap{
+            display:flex;
+            justify-content:center;
+        }
+        .google-wrap .g_id_signin{
+            width:100% !important;
+            display:flex;
+            justify-content:center;
+        }
+        .google-wrap iframe{
+            max-width:100% !important;
+        }
+        a{color:#1e6de0;text-decoration:none;font-weight:600;}
+        a:hover{color:#165bb8;}
+        .footer-link{margin-top:16px;text-align:center;}
+
+        @media(max-width:600px){
+            .card{padding:22px;}
+            h1{font-size:26px;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="brand-icon">⟡</div>
+    <h1>Create your account</h1>
+    <p class="subtitle">Get started with MediEco waste management</p>
+
+    <div class="card">
+        <h2>Signup</h2>
+        <p>Enter your details to create your account</p>
+
+        <!-- Normal Signup Form -->
+        <form action="signup.php" method="POST">
+            <label>Full Name</label>
+            <input type="text" name="fullname" placeholder="Enter Full Name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter Email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Create Password" required>
+
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <label>Role</label>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="user">User</option>
+                <option value="admin">admin</option>
+                <option value="collector">collector</option>
+            </select>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="divider">OR</div>
+
+        <!-- Google Signup Button -->
+        <div id="g_id_onload"
+             data-client_id="105448976418-ev3v7fmlt008si1bupsq5f680r8qnfsq.apps.googleusercontent.com"
+             data-context="signup"
+             data-ux_mode="post"
+             data-login_uri="http://localhost/hospitalwebsite/google-callback.php"
+             data-auto_prompt="false"
+             data-auto_select="false">
+        </div>
+
+        <div class="google-wrap">
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="signup_with"
+                 data-shape="rectangular"
+                 data-logo_alignment="left">
+            </div>
+        </div>
+
+        <div class="footer-link">Already have an account? <a href="login.html">Login</a></div>
+    </div>
+</div>
+
+</body>
+<script src="theme.js"></script>
+</html>

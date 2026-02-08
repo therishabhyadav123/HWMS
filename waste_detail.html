@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Details | MediEco</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .detail-page{
+      max-width:980px;
+      margin:120px auto 80px;
+      padding:0 6%;
+    }
+    .detail-card{
+      background:#ffffff;
+      border-radius:22px;
+      box-shadow:0 18px 40px rgba(15,23,42,0.12);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:0;
+    }
+    .detail-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      min-height:320px;
+    }
+    .detail-body{
+      padding:32px 34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:16px;
+    }
+    .detail-body h1{
+      font-size:32px;
+      color:#0f172a;
+    }
+    .detail-body p{
+      color:#475569;
+      line-height:1.7;
+      font-size:17px;
+    }
+    .detail-back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#1e6de0;
+      font-weight:600;
+      text-decoration:none;
+      margin-top:6px;
+    }
+    .detail-back:hover{
+      color:#165bb8;
+    }
+    html[data-theme="dark"] .detail-card{
+      background:#111c30;
+      box-shadow:0 18px 40px rgba(2,6,23,0.6);
+    }
+    html[data-theme="dark"] .detail-body h1{
+      color:#e2e8f0;
+    }
+    html[data-theme="dark"] .detail-body p{
+      color:#94a3b8;
+    }
+    @media (max-width:900px){
+      .detail-card{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="detail-page">
+    <div class="detail-card">
+      <img id="detailImage" src="waste.jpg" alt="Waste detail image">
+      <div class="detail-body">
+        <h1 id="detailTitle">Waste Details</h1>
+        <p id="detailDesc">Explore the category, safety guidance, and handling requirements for this waste type.</p>
+        <a class="detail-back" href="index.php"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const desc = params.get('desc');
+    const img = params.get('img');
+
+    if (title) {
+      document.getElementById('detailTitle').textContent = title;
+      document.title = `${title} | MediEco`;
+    }
+
+    if (desc) {
+      document.getElementById('detailDesc').textContent = desc;
+    }
+
+    if (img) {
+      const imageEl = document.getElementById('detailImage');
+      imageEl.src = img;
+      imageEl.alt = title ? `${title} image` : 'Waste detail image';
+    }
+  </script>
+</body>
+</html>

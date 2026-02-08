@@ -1,0 +1,64 @@
+/* Shared theme helpers for non-index pages */
+html[data-theme="dark"] body{
+  background:#0c1422 !important;
+  color:#e2e8f0 !important;
+}
+
+html[data-theme="dark"] header{
+  background:rgba(15,23,42,0.9) !important;
+  border-color:#1f2a44 !important;
+}
+
+html[data-theme="dark"] .nav-link{
+  color:#cbd5f0 !important;
+}
+
+html[data-theme="dark"] .nav-link:hover{
+  background:#1f2a44 !important;
+  color:#ffffff !important;
+}
+
+html[data-theme="dark"] .nav-shell{
+  background:rgba(15,23,42,0.7) !important;
+  border-color:#1f2a44 !important;
+}
+
+html[data-theme="dark"] header nav{
+  background:rgba(15,23,42,0.7) !important;
+  border-color:#1f2a44 !important;
+}
+
+html[data-theme="dark"] #themeToggle{
+  background:rgba(15,23,42,0.8) !important;
+  border-color:#1f2a44 !important;
+}
+
+html[data-theme="dark"] #themeIcon{
+  color:#e2e8f0 !important;
+}
+
+html[data-theme="dark"] .back-home{
+  color:#cbd5f0 !important;
+  border-color:#1f2a44 !important;
+  background:rgba(15,23,42,0.85) !important;
+}
+
+html[data-theme="dark"] .card-surface{
+  background:#111c30 !important;
+  border-color:#1f2a44 !important;
+  color:#e2e8f0 !important;
+}
+
+html[data-theme="dark"] .muted-text{
+  color:#94a3b8 !important;
+}
+
+.profile-initial{
+  font-weight:800;
+  font-size:14px;
+  color:#334155;
+}
+
+html[data-theme="dark"] .profile-initial{
+  color:#e2e8f0;
+}
