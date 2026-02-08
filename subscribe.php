@@ -19,8 +19,8 @@ $_SESSION['plan_data'] = [
 ];
 
 /* -------- RAZORPAY KEYS (TEST MODE) -------- */
-$keyId     = "rzp_test_S8kjmnKTLw1AOm";
-$keySecret = "f3LsjFbpZdqFcaBjySR6pouK";
+$keyId     = "rzp_test_w1AOm";
+$keySecret = "f3LsjFbSR6pouK";
 
 /* -------- CREATE ORDER -------- */
 $orderData = [
@@ -75,4 +75,5 @@ rzp.open();
 
 </body>
 </html>
+
 
